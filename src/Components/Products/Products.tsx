@@ -20,9 +20,11 @@ const Home = () => {
     axios.get(url).then((response) => {
       const data = response.data.products
       setItem(data)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 50)
+      if(data){
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 50)
+      }
     })
   },[]);
 
@@ -32,7 +34,7 @@ const Home = () => {
         <ContainerProducts>
         <Products>
              {item.map((product:any) => (
-              <Skeleton key={product.id} width={200} height={350} borderRadius={10} />
+              <Skeleton key={product.id} width={230} height={420} borderRadius={10} marginBottom={20} />
              ))}
           </Products>
         </ContainerProducts>

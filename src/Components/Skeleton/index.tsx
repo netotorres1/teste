@@ -4,11 +4,12 @@ type Props = {
     width: number | string;
     height: number | string;
     borderRadius?: number;
+    marginBottom: number;
 }
 
-function Skeleton({width, height, borderRadius} : Props){
+function Skeleton({width, height, borderRadius, marginBottom} : Props){
     return(
-        <Container style={{width, height, borderRadius}} />
+        <Container style={{width, height, borderRadius, marginBottom}} />
     )
 }
 
