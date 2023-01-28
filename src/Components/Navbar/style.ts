@@ -59,8 +59,8 @@ export const Container = styled.div`
 export const Cart = styled.div`
     position: absolute;
     width: 500px;
-    height: 1150px;
-    right: 0px;
+    height: 1145px;
+    right: -19px;
     background-color: #0F52BA;
     display: flex;
     justify-content: center;

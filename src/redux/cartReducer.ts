@@ -1,6 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+interface CounterState {
+  products: any
+}
+
+const initialState: CounterState = {
   products: [],
 };
 
@@ -8,16 +12,16 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action) => {
-      const item = state.products.find((item) => item.id === action.payload.id);
+    addToCart: (state, action: PayloadAction<any>) => {
+      const item:any = state.products.find((item:any) => item.id === action.payload.id);
       if (item) {
         item.quantity += action.payload.quantity;
       } else {
         state.products.push(action.payload);
       }
     },
-    removeToCart: (state, action) => {
-      const item = state.products.find((item) => item.id === action.payload.id);
+    removeToCart: (state, action: PayloadAction<any>) => {
+      const item:any = state.products.find((item:any) => item.id === action.payload.id);
       if (item) {
         item.quantity -= action.payload.quantity;
       } else {
@@ -25,7 +29,7 @@ export const cartSlice = createSlice({
       }
     },
     removeItem: (state,action) => {
-      state.products=state.products.filter(item=>item.id !== action.payload)
+      state.products=state.products.filter((item:any)=>item.id !== action.payload)
     },
     resetCart: (state) => {
       state.products = []

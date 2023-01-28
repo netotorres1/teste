@@ -17,5 +17,5 @@ export const Container = styled.div`
         100%{
             background-position: -135% 0%;
         }
-    }
+    } 
 `

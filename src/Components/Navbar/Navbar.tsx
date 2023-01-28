@@ -7,10 +7,11 @@ import {FaCartPlus} from 'react-icons/fa'
 import {MdClose} from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeItem, removeToCart } from '../../redux/cartReducer'
+import type { RootState } from './../../redux/store'
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)
-    const products = useSelector(state => state.cart.products)
+    const products = useSelector((state: RootState) => state.cart.products)
     const dispatch = useDispatch()
     const [quantity] = useState(1)
 
@@ -20,7 +21,7 @@ const Navbar = () => {
     
     const totalPrice = () => {
       let total = 0;
-      products.forEach((item) => (total += item.quantity * item.price))
+      products.forEach((item:any) => (total += item.quantity * item.price))
       return total.toFixed(2);
     }
 
@@ -47,7 +48,7 @@ const Navbar = () => {
                 </BtnCartClose>
               </ContainerTitle>
               <ContainerItems>
-                {products.map((item) => (
+                {products.map((item:any) => (
                   <ContainerProductCart key={item.id}>
                     <ImgProductCart alt='Product Image' src={item.image} />
                     <TitleProductCart>{item.name}</TitleProductCart>
