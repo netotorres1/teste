@@ -67,6 +67,7 @@ export const Cart = styled.div`
     align-items: center;
     display: none;
     box-shadow:-7px 3px 21px -7px rgba(0,0,0,0.55);
+    overflow: auto;
 
     &.open{
         display: flex;

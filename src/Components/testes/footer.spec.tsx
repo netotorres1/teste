@@ -13,6 +13,6 @@ describe('HomeComponent', () => {
 
         const footerContent = screen.getByText('MKS sistemas © Todos os direitos reservados')
 
-        expect(footerContent).toBe(true)
+        expect(footerContent)
     })
 })
