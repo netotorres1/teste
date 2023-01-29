@@ -1,3 +1,4 @@
+
 import {Foot} from './style'
 
 const Footer = () => {

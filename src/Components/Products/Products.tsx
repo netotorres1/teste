@@ -6,10 +6,18 @@ import { useDispatch} from 'react-redux'
 import { addToCart } from '../../redux/cartReducer'
 import Skeleton from '../Skeleton'
 
+interface Item {
+  id: number;
+  name: string;
+  photo: string;
+  price: string;
+  description: string;
+}
+
 const Home = () => {
 
   const [quantity] = useState(1)
-  const [item, setItem] = useState([])
+  const [item, setItem] = useState<Item[]>([])
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true)
 
@@ -33,7 +41,7 @@ const Home = () => {
       <Container>
         <ContainerProducts>
         <Products>
-             {item.map((product:any) => (
+             {item.map((product) => (
               <Skeleton key={product.id} width={230} height={420} borderRadius={10} marginBottom={20} />
              ))}
           </Products>
@@ -46,7 +54,7 @@ const Home = () => {
     <Container>
       <ContainerProducts>
         <Products>
-          {item.map((value:any) => (
+          {item.map((value) => (
             <Product key={value.id}>
               <Img alt='Product Image' src={value.photo} />
               <ContainerPrice>

@@ -7,7 +7,7 @@ import {FaCartPlus} from 'react-icons/fa'
 import {MdClose} from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeItem, removeToCart } from '../../redux/cartReducer'
-import type { RootState } from './../../redux/store'
+import { RootState } from './../../redux/store'
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false)

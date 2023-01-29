@@ -3,7 +3,6 @@ import '@testing-library/jest-dom';
 import '@babel/plugin-syntax-jsx'
 import {expect, jest, test} from '@jest/globals';
 import Products  from './../Products/Products';
-import Navbar from '../Navbar/Navbar';
 
 describe('HomeComponent', () => {
     it('should add to cart', () => {
