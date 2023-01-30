@@ -1,23 +1,15 @@
+import React from 'react';
 import {useEffect, useState} from 'react'
 import {Container, ContainerProducts, Products, Img, ContainerPrice, Name, Price, Desc, Product, BtnBuy, Icon } from './style'
-import axios from 'axios'
 import {FaShoppingBag} from 'react-icons/fa'
 import { useDispatch} from 'react-redux'
 import { addToCart } from '../../redux/cartReducer'
 import Skeleton from '../Skeleton'
-
-interface Item {
-  id: number;
-  name: string;
-  photo: string;
-  price: string;
-  description: string;
-}
+import axios from 'axios'
 
 const Home = () => {
-
   const [quantity] = useState(1)
-  const [item, setItem] = useState<Item[]>([])
+  const [item, setItem] = useState([])
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true)
 
@@ -41,7 +33,7 @@ const Home = () => {
       <Container>
         <ContainerProducts>
         <Products>
-             {item.map((product) => (
+             {item.map((product:any) => (
               <Skeleton key={product.id} width={230} height={420} borderRadius={10} marginBottom={20} />
              ))}
           </Products>
@@ -54,7 +46,7 @@ const Home = () => {
     <Container>
       <ContainerProducts>
         <Products>
-          {item.map((value) => (
+          {item.map((value:any) => (
             <Product key={value.id}>
               <Img alt='Product Image' src={value.photo} />
               <ContainerPrice>

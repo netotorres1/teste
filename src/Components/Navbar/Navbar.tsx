@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import React from 'react';
 import { Nav, ContainerNavbar, Logo, Logosub, ContainerLogo, BtnCart, Qtd, Container, Cart, ContainerCart, ContainerTitle, TitleCart, ContainerItems, 
   ContainerTotal, TotalPrice, TotalPriceValue, FinishBuy, ContainerProductCart, ImgProductCart, TitleProductCart, PriceProductCart, ContainerCartTop, 
   ContainerCartBottom, BtnCartClose , Quantity, BtnDown, BtnUp,BtnRemoveItem,QtdContainer,QtdItems} from './style'
